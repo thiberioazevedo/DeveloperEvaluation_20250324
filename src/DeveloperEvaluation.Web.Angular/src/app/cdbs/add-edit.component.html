@@ -1,0 +1,87 @@
+﻿<h1>{{title}}</h1>
+<form *ngIf="!loading" [formGroup]="formCdb" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="mb-3 col">
+            <label class="form-label">Value</label>
+            <input type="text" formControlName="value" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.value.errors }" placeholder="Enter the value" />
+            <div *ngIf="submitted && f.value.errors" class="invalid-feedback">
+                <div *ngIf="f.value.errors.required">Value is required</div>
+            </div>
+        </div>
+
+        <div class="mb-3 col">
+            <label class="form-label">Months</label>
+            <input type="number" formControlName="months" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.months.errors }" />
+            <div *ngIf="submitted && f.months.errors" class="invalid-feedback">
+                <div *ngIf="f.months.errors.required">Months is required</div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="editMode()" class="row">
+        <div class="mb-3 col">
+            <label class="form-label">CDI</label>
+            <input type="number" formControlName="cdi" class="form-control" readonly/>
+        </div>
+
+        <div class="mb-3 col">
+            <label class="form-label">TB</label>
+            <input type="number" formControlName="tb" class="form-control" readonly/>
+        </div>
+
+        <div class="mb-3 col">
+            <label class="form-label">Gross Value</label>
+            <input type="number" formControlName="grossValue" class="form-control" readonly/>
+        </div>
+
+        <div class="mb-3 col">
+            <label class="form-label">Tax percentage (decimal)</label>
+            <input type="number" formControlName="taxPercentage" class="form-control" readonly/>
+        </div>
+
+        <div class="mb-3 col">
+            <label class="form-label">Tax Amount</label>
+            <input type="number" formControlName="taxAmount" class="form-control" readonly/>
+        </div>
+
+        <div class="mb-3 col">
+            <label class="form-label">Net Value</label>
+            <input type="number" formControlName="netValue" class="form-control" readonly/>
+        </div>
+    </div>
+
+    <table *ngIf="editMode()" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Initial Value</th>
+                <th>Final Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cdb of cdb?.monthCDBCollection!">
+                <td>{{cdb.month}}</td>
+                <td>{{cdb.initialValue}}</td>
+                <td>{{cdb.finalValue}}</td>
+            </tr>
+            <tr *ngIf="loading">
+                <td colspan="4" class="text-center">
+                    <span class="spinner-border spinner-border-lg align-center"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="mb-3">
+        <button *ngIf="!editMode()" [disabled]="submitting" class="btn btn-primary" (click)="saveCdb()">
+            <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
+            Save CDB
+        </button>
+        <button [disabled]="submitting" class="btn btn-secondary" routerLink="/cdbs/list">
+            Back
+        </button> 
+    </div>
+</form>
+<div *ngIf="loading" class="text-center m-5">
+    <span class="spinner-border spinner-border-lg align-center"></span>
+</div>

@@ -1,0 +1,46 @@
+﻿<h1>CDBs</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th><a routerLink=".." class="btn btn-sm btn-success mb-2">Create CDB</a></th>
+            <th>Value</th>
+            <th>Months</th>
+            <th>CDI</th>
+            <th>TB</th>
+            <th>Gross Value</th>
+            <th>Tax Percentage</th>
+            <th>Tax Amount</th>
+            <th>Net Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cdb of apiResponseWithData?.data?.collection">
+            <td style="white-space: nowrap">
+                <a routerLink="../{{cdb.id}}" class="btn btn-sm btn-primary me-1">Show</a>
+                <button (click)="deleteCdb(cdb.id)" class="btn btn-sm btn-danger btn-delete-user">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!loading">Delete</span>
+                </button>
+            </td>            
+            <td>{{cdb.value}}</td>
+            <td>{{cdb.months}}</td>
+            <td>{{cdb.cdi}}</td>
+            <td>{{cdb.tb}}</td>
+            <td>{{cdb.grossValue}}</td>
+            <td>{{cdb.taxPercentage}}</td>
+            <td>{{cdb.taxAmount}}</td>
+            <td>{{cdb.netValue}}</td>
+        </tr>
+        <tr *ngIf="loading">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<app-pagination
+  [apiResponseWithData]="apiResponseWithData"
+  (pageChange)="onPageChange($event)">
+</app-pagination>
+ 

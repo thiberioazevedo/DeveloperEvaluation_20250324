@@ -1,0 +1,176 @@
+﻿<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <title>Projeto de avaliação para desenvolvedor</title>
+      <meta name="author" content="Josimar Rufino Freire Junior"/>
+      <meta name="description" content="Diretoria de Desenv. Sistemas de Middle e Back Office"/>
+      <style type="text/css"> * {margin:0; padding:0; text-indent:0; }
+         h1 { color: #001F5F; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 28pt; }
+         .s1 { color: #00AFEF; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 18pt; }
+         .s2 { color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
+         .s3 { color: #001F5F; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+         .p, p { color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; margin:0pt; }
+         h2 { color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+         .s4 { color: #003475; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
+         .s5 { color: #404040; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+         li {display: block; }
+         #l1 {padding-left: 0pt;counter-reset: c1 1; }
+         #l1> li>*:first-child:before {counter-increment: c1; content: counter(c1, decimal)" "; color: black; font-style: normal; font-weight: normal; text-decoration: none; }
+         #l1> li:first-child>*:first-child:before {counter-increment: c1 0;  }
+         #l2 {padding-left: 0pt;counter-reset: c2 1; }
+         #l2> li>*:first-child:before {counter-increment: c2; content: counter(c2, decimal)". "; color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+         #l2> li:first-child>*:first-child:before {counter-increment: c2 0;  }
+         #l3 {padding-left: 0pt;counter-reset: c3 1; }
+         #l3> li>*:first-child:before {counter-increment: c3; content: counter(c3, lower-latin)". "; color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+         #l3> li:first-child>*:first-child:before {counter-increment: c3 0;  }
+         #l4 {padding-left: 0pt;counter-reset: c4 1; }
+         #l4> li>*:first-child:before {counter-increment: c4; content: counter(c4, lower-roman)". "; color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+         #l4> li:first-child>*:first-child:before {counter-increment: c4 0;  }
+         #l5 {padding-left: 0pt;counter-reset: c4 1; }
+         #l5> li>*:first-child:before {counter-increment: c4; content: counter(c4, lower-roman)". "; color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+         #l5> li:first-child>*:first-child:before {counter-increment: c4 0;  }
+         #l6 {padding-left: 0pt;counter-reset: c4 1; }
+         #l6> li>*:first-child:before {counter-increment: c4; content: counter(c4, lower-roman)". "; color: #404040; font-family:"Segoe UI", sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+         #l6> li:first-child>*:first-child:before {counter-increment: c4 0;  }
+         li {display: block; }
+         #l7 {padding-left: 0pt; }
+         #l7> li>*:first-child:before {content: " "; color: #404040; font-family:Wingdings; font-style: normal; font-weight: normal; text-decoration: none; font-size: 12pt; }
+      </style>
+   </head>
+   <body>
+      <p style="padding-left: 8pt;text-indent: 0pt;text-align: left;">
+         <span>
+      <table border="0" cellspacing="0" cellpadding="0">
+      <tr><td><img width="114" height="98" src="data:image/png;base64,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"/></td></tr>
+      </table>
+      </span>
+      </p>
+      <p style="text-indent: 0pt;text-align: left;"><br/></p>
+      <h1 style="padding-left: 5pt;text-indent: 0pt;text-align: left;">PROJETO DE AVALIAÇÃO PARA DESENVOLVEDOR</h1>
+      <p class="s1" style="padding-top: 12pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Diretoria de Desenv. Sistemas de Middle e Back Office</p>
+      <p class="s2" style="padding-top: 20pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">11/04/2022</p>
+      <p style="text-indent: 0pt;text-align: left;"><br/></p>
+      <ol id="l1">
+         <li data-list-text="1">
+            <p class="s3" style="padding-left: 72pt;text-indent: -17pt;text-align: left;">OBJETIVO</p>
+            <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br/></p>
+            <p style="padding-left: 55pt;text-indent: 0pt;line-height: 150%;text-align: justify;">Buscamos avaliar a capacidade de análise do desenvolvedor e a habilidade para implementação de soluções fundamentadas pelos princípios do SOLID, Testes unitários e performance.<br/>
+         </li>
+         <br/>
+         <li data-list-text="2">
+            <p class="s3" style="padding-left: 72pt;text-indent: -17pt;text-align: left;">DESENVOLVEDOR</p>
+            <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br/></p>
+            <p style="padding-left: 55pt;text-indent: 0pt;line-height: 150%;text-align: justify;">
+               Thiberio Azevedo Barreto
+            </p>
+            <p style="padding-left: 55pt;text-indent: 0pt;line-height: 150%;text-align: justify;">
+               Front - Angular 14
+            </p>
+            <p style="padding-left: 55pt;text-indent: 0pt;line-height: 150%;text-align: justify;">
+               Back - Net Core 8
+            </p>
+            <p style="padding-left: 55pt;text-indent: 0pt;line-height: 150%;text-align: justify;">
+               Linkedin - <a href="https://www.linkedin.com/in/thiberioazevedo/">https://www.linkedin.com/in/thiberioazevedo</a>
+            </p>
+
+        </li>
+        <li data-list-text="2">
+            <p class="s3" style="padding-top: 11pt;padding-left: 72pt;text-indent: -17pt;text-align: left;">DESAFIO DO CÁLCULO DO CDB</p>
+            <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br/></p>
+            <ol id="l2">
+               <li data-list-text="1.">
+                  <p style="padding-left: 91pt;text-indent: -18pt;line-height: 150%;text-align: justify;">Solicitamos a criação de uma tela web onde possamos informar um valor monetário positivo, e um prazo em meses maior que 1(um) para resgate da aplicação. Após solicitar o cálculo do investimento, a tela deve apresentar o resultado bruto e o resultado líquido do investimento.</p>
+               </li>
+               <li data-list-text="2.">
+                  <p style="padding-top: 12pt;padding-left: 91pt;text-indent: -18pt;line-height: 150%;text-align: justify;">Solicitamos a criação de uma Web API que receba os dados informados no item 1</p>
+                  <ol id="l3">
+                     <li data-list-text="a.">
+                        <p style="padding-top: 12pt;padding-left: 127pt;text-indent: -18pt;line-height: 150%;text-align: left;">Para o cálculo do CDB, deve-se utilizar a fórmula <b>VF = VI x [1 + (CDI x TB)] </b>onde:</p>
+                        <ol id="l4">
+                           <li data-list-text="i.">
+                              <h2 style="padding-top: 12pt;padding-left: 163pt;text-indent: -14pt;text-align: left;">VF <span class="p">é o valor final;</span></h2>
+                           </li>
+                           <li data-list-text="ii.">
+                              <h2 style="padding-top: 9pt;padding-left: 163pt;text-indent: -17pt;text-align: left;">VI <span class="p">é o valor inicial;</span></h2>
+                           </li>
+                           <li data-list-text="iii.">
+                              <h2 style="padding-top: 9pt;padding-left: 163pt;text-indent: -20pt;text-align: left;">CDI <span class="p">é o valor dessa taxa no último mês;</span></h2>
+                           </li>
+                           <li data-list-text="iv.">
+                              <h2 style="padding-top: 9pt;padding-left: 163pt;text-indent: -20pt;text-align: justify;">TB <span class="p">é quanto o banco paga sobre o CDI;</span></h2>
+                              <h2 style="padding-top: 9pt;padding-left: 127pt;text-indent: 0pt;line-height: 150%;text-align: justify;">Nota: <span class="p">A fórmula calcula somente o valor de um mês. Ou seja, os rendimentos de cada mês devem ser utilizados para calcular o mês seguinte</span></h2>
+                           </li>
+                        </ol>
+                     </li>
+                     <li data-list-text="b.">
+                        <p style="padding-top: 12pt;padding-left: 127pt;text-indent: -17pt;text-align: left;">Para medida do Exercício considerar os valores abaixo como fixos:</p>
+                        <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br/></p>
+                        <ol id="l5">
+                           <li data-list-text="i.">
+                              <h2 style="padding-left: 163pt;text-indent: -14pt;text-align: justify;">TB <span class="p">– 108%</span></h2>
+                           </li>
+                           <li data-list-text="ii.">
+                              <h2 style="padding-top: 9pt;padding-left: 163pt;text-indent: -17pt;text-align: justify;">CDI <span class="p">– 0,9%</span></h2>
+                              <p style="text-indent: 0pt;text-align: left;"><br/></p>
+                           </li>
+                        </ol>
+                     </li>
+                     <li data-list-text="c.">
+                        <p style="padding-left: 127pt;text-indent: -17pt;text-align: left;">Para cálculo do imposto utilizar a seguinte tabela:</p>
+                        <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br/></p>
+                        <ol id="l6">
+                           <li data-list-text="i.">
+                              <p style="padding-left: 163pt;text-indent: -14pt;text-align: left;">Até 06 meses: 22,5%</p>
+                           </li>
+                           <li data-list-text="ii.">
+                              <p style="padding-top: 9pt;padding-left: 163pt;text-indent: -17pt;text-align: left;">Até 12 meses: 20%</p>
+                           </li>
+                           <li data-list-text="iii.">
+                              <p style="padding-top: 9pt;padding-left: 163pt;text-indent: -20pt;text-align: left;">Até 24 meses 17,5%</p>
+                           </li>
+                           <li data-list-text="iv.">
+                              <p style="padding-top: 9pt;padding-left: 163pt;text-indent: -20pt;text-align: left;">Acima de 24 meses 15%</p>
+                              <p style="padding-top: 4pt;text-indent: 0pt;text-align: left;"><br/></p>
+                           </li>
+                        </ol>
+                     </li>
+                  </ol>
+               </li>
+            </ol>
+         </li>
+         <li data-list-text="3">
+            <p class="s4" style="padding-left: 72pt;text-indent: -17pt;text-align: left;">DOD DA AVALIAÇÃO</p>
+         </li>
+      </ol>
+      <p style="padding-top: 3pt;text-indent: 0pt;text-align: left;"><br/></p>
+      <ul id="l7">
+         <li data-list-text="">
+            <p class="s5" style="padding-left: 108pt;text-indent: -18pt;line-height: 150%;text-align: left;">Ambos os projetos devem estar numa única solução do Visual Studio para facilitar a avaliação.</p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-top: 12pt;padding-left: 108pt;text-indent: -18pt;line-height: 150%;text-align: left;">A solução deve ter um arquivo readme.mk com instruções para execução e testes da solução.</p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-top: 12pt;padding-left: 108pt;text-indent: -17pt;text-align: left;">O projeto Web deve ser feito em Angular CLI.</p>
+            <p style="padding-top: 5pt;text-indent: 0pt;text-align: left;"><br/></p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-left: 108pt;text-indent: -18pt;line-height: 150%;text-align: left;">A WebApi deve ser desenvolvida em .NET Framework 4.7.2 ou superior.</p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-top: 12pt;padding-left: 108pt;text-indent: -18pt;line-height: 150%;text-align: left;">A WebApi deve possuir cobertura de teste acima de 90 % na camada lógica.</p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-top: 12pt;padding-left: 108pt;text-indent: -17pt;text-align: left;">Teste unitário no Angular é um Stretch Go</p>
+            <p style="padding-top: 5pt;text-indent: 0pt;text-align: left;"><br/></p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-left: 108pt;text-indent: -18pt;line-height: 150%;text-align: justify;">Os projetos não devem possuir alertas de análise de código nativa do Visual Studio, tão pouco de regras padrão do Sonar. Recomendamos a extensão do SonarLint</p>
+         </li>
+         <li data-list-text="">
+            <p class="s5" style="padding-top: 12pt;padding-left: 108pt;text-indent: -18pt;line-height: 150%;text-align: left;">O teste deve ser versionado em repositório público no GitHub e e o link deve ser enviado juntamente com o currículo do desenvolvedor</p>
+         </li>
+      </ul>
+   </body>
+</html>

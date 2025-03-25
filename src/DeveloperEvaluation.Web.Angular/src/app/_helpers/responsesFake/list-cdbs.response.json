@@ -1,0 +1,37 @@
+{
+  "data": {
+    "totalPages": 9,
+    "totalCount": 9,
+    "hasPrevious": false,
+    "hasNext": true,
+    "collection": [
+      {
+        "id": "91f2d026-015a-4941-9dca-1de06d69e175",
+        "value": 10,
+        "months": 10,
+        "cdi": 0.9,
+        "tb": 108,
+        "grossValue": 15825.97,
+        "taxPercentage": 0.2,
+        "taxAmount": 3165.19,
+        "netValue": 12660.78
+      },
+      {
+        "id": "09af49fc-3648-440a-89d0-f5cb959a052b",
+        "value": 10,
+        "months": 7,
+        "cdi": 0.9,
+        "tb": 108,
+        "grossValue": 1736.02,
+        "taxPercentage": 0,
+        "taxAmount": 0,
+        "netValue": 0
+      }
+    ],
+    "pageNumber": 1,
+    "pageSize": 1
+  },
+  "success": true,
+  "message": "",
+  "errors": []
+}
