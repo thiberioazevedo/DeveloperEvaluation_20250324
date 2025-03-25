@@ -1,5 +1,3 @@
-[Back to README](../README.md)
-
 ## Overview
 
 This project is a Full Stack Angular developer evaluation for B3. The goal is to demonstrate skills in software development, including creating a robust, efficient, and maintainable web application using modern technologies.
