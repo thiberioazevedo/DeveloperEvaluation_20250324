@@ -34,7 +34,7 @@ This project is a Full Stack Angular developer evaluation for B3. The goal is to
 
 ### How to Run the Project
 
-1. **Clone the repository**: git clone https://github.com/thiberioazevedo/CDB.git
+1. **Clone the repository**: git clone https://github.com/thiberioazevedo/DeveloperEvaluation_20250324.git
 
 2. **Open solution**: DeveloperEvaluation.sln
 
