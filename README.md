@@ -36,23 +36,21 @@ This project is a Full Stack Angular developer evaluation for B3. The goal is to
 
 2. **Open solution**: DeveloperEvaluation.sln
 
-3. **Navigate to the source directory**: cd src
+3. **Start the Docker containers**: docker-compose up --build
 
-4. **Start the Docker containers**: docker-compose up
+4. **Database migrations will run automatically when you move up the backend**:
 
-5. **Apply the database migrations**: dotnet ef database update -v --project DeveloperEvaluation.ORM --startup-project DeveloperEvaluation.WebApi
-
-6. **Access the application**:
-    - Frontend: `http://localhost:4200`
-    - Backend:  `http://localhost:5000`
+5. **Access the application**:
+    - Frontend: `http://localhost:4200`. Run in IDE. Exec: "npm install". Exec: "ng serve --open"
+    - Backend:  `http://localhost:5119`. Run DeveloperEvaluation.WebApi with http in IDE
 	- Documenting API: `http://localhost:5119/swagger` 
 	Swagger streamlines API development by documenting, testing, and sharing RESTful APIs interactively and efficiently	
 	
-7. **Register a new user**
+6. **Register a new user**
 
-8. **Log in with the created user**
+7. **Log in with the created user**
 
-9. **Access the CDB menu and perform the desired operations (insert, delete, list, get)**
+8. **Access the CDB menu and perform the desired operations (insert, delete, list, get)**
     
 ## Frameworks
 Our frameworks are the building blocks that enable us to create robust, efficient, and maintainable software solutions. They have been carefully selected to complement our tech stack and address specific development challenges we face in our projects.

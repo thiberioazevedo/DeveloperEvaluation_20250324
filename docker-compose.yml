@@ -9,11 +9,20 @@ services:
       dockerfile: src/DeveloperEvaluation.WebApi/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_HTTP_PORTS=5119
+      - ASPNETCORE_HTTPS_PORTS=7181
+      - ConnectionStrings__DefaultConnection=Host=ambev_developer_evaluation_database;Database=developer_evaluation;Username=developer;Password=ev@luAt10n
+      - Jwt__SecretKey=YourSuperSecretKeyForJwtTokenGenerationThatShouldBeAtLeast32BytesLong
+      - Logging__LogLevel__Default=Information
+      - Logging__LogLevel__Microsoft=Warning
+      - Logging__LogLevel__Microsoft.Hosting.Lifetime=Information
+      - AllowedHosts=*
+      - RabbitMQ__HostName=localhost
+      - RabbitMQ__UserName=guest
+      - RabbitMQ__Password=guest
     ports:
-      - "8080"
-      - "8081"
+      - "5119"
+      - "7181"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

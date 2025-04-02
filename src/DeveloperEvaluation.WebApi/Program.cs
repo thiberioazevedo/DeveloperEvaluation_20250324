@@ -30,7 +30,10 @@ public class Program
             builder.Services.AddEndpointsApiExplorer();
 
             builder.AddBasicHealthChecks();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.CustomSchemaIds(type => type.FullName);
+            });
 
             builder.Services.AddDbContext<DefaultContext>(options =>
                 options.UseNpgsql(
@@ -85,6 +88,8 @@ public class Program
 
             app.MapControllers();
 
+            ApplyMigrations(app);
+
             app.Run();
         }
         catch (Exception ex)
@@ -94,6 +99,26 @@ public class Program
         finally
         {
             Log.CloseAndFlush();
+        }
+    }
+
+    static void ApplyMigrations(WebApplication app)
+    {
+        using (var scope = app.Services.CreateScope())
+        {
+            var dbContext = scope.ServiceProvider.GetRequiredService<DefaultContext>();
+
+            var pendingMigrations = dbContext.Database.GetPendingMigrations();
+            if (pendingMigrations.Any())
+            {
+                Console.WriteLine("Applying pending migrations...");
+                dbContext.Database.Migrate();
+                Console.WriteLine("Migrations applied successfully.");
+            }
+            else
+            {
+                Console.WriteLine("No pending migrations found.");
+            }
         }
     }
 }

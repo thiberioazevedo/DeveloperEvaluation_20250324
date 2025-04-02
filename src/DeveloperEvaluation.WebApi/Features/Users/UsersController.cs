@@ -8,6 +8,7 @@ using DeveloperEvaluation.WebApi.Features.Users.DeleteUser;
 using DeveloperEvaluation.Application.Users.CreateUser;
 using DeveloperEvaluation.Application.Users.GetUser;
 using DeveloperEvaluation.Application.Users.DeleteUser;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DeveloperEvaluation.WebApi.Features.Users;
 
@@ -38,9 +39,10 @@ public class UsersController : BaseController
     /// <param name="request">The user creation request</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>The created user details</returns>
-    [HttpPut]
+    [HttpPost]
     [ProducesResponseType(typeof(ApiResponseWithData<CreateUserResponse>), StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+    [AllowAnonymous]
     public async Task<IActionResult> CreateUser([FromBody] CreateUserRequest request, CancellationToken cancellationToken)
     {
         var validator = new CreateUserRequestValidator();
