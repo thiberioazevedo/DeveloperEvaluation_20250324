@@ -39,7 +39,7 @@ export class AccountService extends BaseService<User> {
 
     register(user: User) {
         let body = { username: user.username, password: user.password, confirmPassword: user.confirmPassword, phone: user.phone, email: user.email};
-        return this.httpClient.put(`${environment.apiUrl}/users`, body);
+        return this.httpClient.post(`${environment.apiUrl}/users`, body);
     }
 
     getAll() {
