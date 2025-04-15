@@ -9,7 +9,6 @@
             <th>CDI</th>
             <th>TB</th>
             <th>Gross Value</th>
-            <th>Tax Percentage</th>
             <th>Tax Amount</th>
             <th>Net Value</th>
         </tr>
@@ -23,14 +22,13 @@
                     <span *ngIf="!loading">Delete</span>
                 </button>
             </td>            
-            <td>{{cdb.value}}</td>
+            <td>{{cdb.value | currency}}</td>
             <td>{{cdb.months}}</td>
-            <td>{{cdb.cdi}}</td>
-            <td>{{cdb.tb}}</td>
-            <td>{{cdb.grossValue}}</td>
-            <td>{{cdb.taxPercentage}}</td>
-            <td>{{cdb.taxAmount}}</td>
-            <td>{{cdb.netValue}}</td>
+            <td>{{(cdb.cdi! / 100) | percent: '1.2-4'}}</td>
+            <td>{{(cdb.tb! / 100) | percent: '1.2-4'}}</td>
+            <td>{{this.getLastMonthCDB(cdb)?.grossValue | currency }}</td>
+            <td>{{getTotalTaxAmount(cdb) | currency }}</td>
+            <td>{{this.getLastMonthCDB(cdb)?.netValue | currency }}</td>
         </tr>
         <tr *ngIf="loading">
             <td colspan="4" class="text-center">

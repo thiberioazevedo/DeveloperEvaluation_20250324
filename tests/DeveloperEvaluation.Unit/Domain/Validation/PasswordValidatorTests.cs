@@ -67,6 +67,30 @@ public class PasswordValidatorTests
     }
 
     /// <summary>
+    /// Tests that validation fails when not should respect rules.
+    /// </summary>
+    /// <param name="password">The short password to test.</param>
+    [Theory(DisplayName = "Password validation should respect rules")]
+    [InlineData("", false)]
+    [InlineData("short", false)]
+    [InlineData("lowercase1!", false)]
+    [InlineData("UPPERCASE1!", false)]
+    [InlineData("Uppercase!", false)]
+    [InlineData("Uppercase1", false)]
+    [InlineData("ValidPass1!", true)]
+    public void Given_Password_When_Validated_Then_ShouldRespectRules(string password, bool expectedValidity)
+    {
+        // Arrange
+        var validator = new PasswordValidator();
+
+        // Act
+        var result = validator.Validate(password);
+
+        // Assert
+        Assert.Equal(expectedValidity, result.IsValid);
+    }
+
+    /// <summary>
     /// Tests that validation fails when password lacks uppercase letters.
     /// </summary>
     [Fact(DisplayName = "Password without uppercase should fail validation")]

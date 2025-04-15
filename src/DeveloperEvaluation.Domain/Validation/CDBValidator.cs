@@ -14,6 +14,5 @@ public class CDBValidator : AbstractValidator<CDB>
         RuleFor(sale => sale.MonthCDBCollection).Must(x => x?.Count > 0).WithMessage("There must be movement");
         RuleForEach(sale => sale.MonthCDBCollection).ChildRules(child => child.RuleFor(x => x.Month).GreaterThan(0).WithMessage("Month must be greater than zero"));
         RuleForEach(sale => sale.MonthCDBCollection).ChildRules(child => child.RuleFor(x => x.InitialValue).GreaterThan(0).WithMessage("Initial value must be greater than zero"));
-        RuleForEach(sale => sale.MonthCDBCollection).ChildRules(child => child.RuleFor(x => x.FinalValue).GreaterThan(0).WithMessage("Final value must be greater than zero"));
     }
 }

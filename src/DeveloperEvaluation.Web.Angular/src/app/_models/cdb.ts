@@ -7,10 +7,6 @@ export class Cdb {
         public months?: number,
         public cdi?: number,
         public tb?: number,
-        public grossValue?: number,
-        public taxPercentage?: number,
-        public taxAmount?: number,
-        public netValue?: number,
         public monthCDBCollection?: MonthCdb[]) {
     }
 }

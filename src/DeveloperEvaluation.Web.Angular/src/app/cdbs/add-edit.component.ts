@@ -5,6 +5,7 @@ import { first, map } from 'rxjs/operators';
 import { AlertService } from '@app/_services';
 import { CdbService } from '@app/_services/cdb.service';
 import { Cdb } from '@app/_models/cdb';
+import { MonthCdb } from '@app/_models/monthCdb';
 
 @Component({ templateUrl: 'add-edit.component.html' })
 export class AddEditComponent implements OnInit {
@@ -163,5 +164,17 @@ export class AddEditComponent implements OnInit {
         }
 
         return array;
+    }
+
+    getLastMonthCDB(cdb: Cdb): MonthCdb | undefined {
+        if (cdb.monthCDBCollection && cdb.monthCDBCollection.length > 0) {
+            return cdb.monthCDBCollection[cdb.monthCDBCollection.length - 1];
+        } else {
+            return undefined;
+        }
+    }
+
+    getTotalTaxAmount(): number {
+        return this.cdb?.monthCDBCollection?.reduce((acc, item) => acc + (item.taxAmount || 0), 0) || 0;
     }
 }

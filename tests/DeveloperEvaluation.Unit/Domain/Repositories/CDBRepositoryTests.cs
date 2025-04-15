@@ -8,7 +8,7 @@ namespace DeveloperEvaluation.Unit.Domain.Repositories
     {
         public override CDB CreateEntityDefaultInstance()
         {
-            return new CDB(1, 2, 1, 1);
+            return new CDB(1, 2);
         }
 
         public override IRepository<CDB> CreateRepositoryInstance()

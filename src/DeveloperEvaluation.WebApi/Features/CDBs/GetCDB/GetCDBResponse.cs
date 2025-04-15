@@ -11,10 +11,6 @@ public class GetCDBResponse
     public int Months { get; internal set; }
     public decimal CDI { get; internal set; }
     public decimal TB { get; internal set; }
-    public decimal GrossValue { get; internal set; }
-    public decimal TaxPercentage { get; internal set; }
-    public decimal TaxAmount { get; internal set; }
-    public decimal NetValue { get; internal set; }
     public virtual ICollection<MonthCDB>? MonthCDBCollection { get; internal set; }
     internal void OrderMonth()
     {

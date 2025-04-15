@@ -17,5 +17,6 @@ public class ListCDBsProfile : Profile
         CreateMap<ListCDBsRequest, ListCDBsCommand> ();
         CreateMap<PaginatedList<CDBResult>, PaginatedList<CDBResponse>>();
         CreateMap<CDBResult, CDBResponse>();
+        CreateMap<MonthCDBResult, MonthCDBResponse>();
     }
 }

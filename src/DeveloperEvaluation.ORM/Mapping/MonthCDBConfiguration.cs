@@ -16,7 +16,10 @@ public class MonthCDBConfiguration : IEntityTypeConfiguration<MonthCDB>
         builder.Property(u => u.CDBId).IsRequired();
         builder.Property(u => u.Month).IsRequired();
         builder.Property(u => u.InitialValue).IsRequired();
-        builder.Property(u => u.FinalValue).IsRequired();
+        builder.Property(u => u.TaxPercentage).IsRequired();
+        builder.Property(u => u.GrossValue).IsRequired();
+        builder.Property(u => u.TaxAmount).IsRequired();
+        builder.Property(u => u.NetValue).IsRequired();
 
         builder.HasOne(u => u.CDB).WithMany(i => i.MonthCDBCollection).HasForeignKey(i => i.CDBId).HasConstraintName("FK_MonthsCDBs_CDBs");
 

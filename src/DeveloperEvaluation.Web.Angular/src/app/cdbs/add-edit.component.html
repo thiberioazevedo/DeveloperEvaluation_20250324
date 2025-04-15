@@ -16,37 +16,20 @@
                 <div *ngIf="f.months.errors.required">Months is required</div>
             </div>
         </div>
-    </div>
 
-    <div *ngIf="editMode()" class="row">
-        <div class="mb-3 col">
+        <div *ngIf="editMode()" class="mb-3 col">
             <label class="form-label">CDI</label>
-            <input type="number" formControlName="cdi" class="form-control" readonly/>
+            <label class="form-control">{{(cdb.cdi! / 100) | percent: '1.2-4'}}</label>
         </div>
 
-        <div class="mb-3 col">
+        <div *ngIf="editMode()" class="mb-3 col">
             <label class="form-label">TB</label>
-            <input type="number" formControlName="tb" class="form-control" readonly/>
+            <label class="form-control">{{(cdb.tb! / 100) | percent: '1.2-4'}}</label>
         </div>
 
-        <div class="mb-3 col">
-            <label class="form-label">Gross Value</label>
-            <input type="number" formControlName="grossValue" class="form-control" readonly/>
-        </div>
-
-        <div class="mb-3 col">
-            <label class="form-label">Tax percentage (decimal)</label>
-            <input type="number" formControlName="taxPercentage" class="form-control" readonly/>
-        </div>
-
-        <div class="mb-3 col">
+        <div *ngIf="editMode()" class="mb-3 col">
             <label class="form-label">Tax Amount</label>
-            <input type="number" formControlName="taxAmount" class="form-control" readonly/>
-        </div>
-
-        <div class="mb-3 col">
-            <label class="form-label">Net Value</label>
-            <input type="number" formControlName="netValue" class="form-control" readonly/>
+            <label class="form-control">{{getTotalTaxAmount() | currency }}</label>
         </div>
     </div>
 
@@ -55,14 +38,20 @@
             <tr>
                 <th>Month</th>
                 <th>Initial Value</th>
-                <th>Final Value</th>
+                <th>Gross Value</th>
+                <th>Tax percentage</th>
+                <th>Tax Amount</th>
+                <th>Net Value</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cdb of cdb?.monthCDBCollection!">
-                <td>{{cdb.month}}</td>
-                <td>{{cdb.initialValue}}</td>
-                <td>{{cdb.finalValue}}</td>
+            <tr *ngFor="let monthCDB of cdb?.monthCDBCollection!">
+                <td>{{monthCDB.month}}</td>
+                <td>{{monthCDB.initialValue | currency }}</td>
+                <td>{{monthCDB.grossValue | currency }}</td>
+                <td>{{(monthCDB.taxPercentage) | percent: '1.2-4' }}</td>
+                <td>{{monthCDB.taxAmount | currency }}</td>
+                <td>{{monthCDB.netValue | currency }}</td>                                                                
             </tr>
             <tr *ngIf="loading">
                 <td colspan="4" class="text-center">

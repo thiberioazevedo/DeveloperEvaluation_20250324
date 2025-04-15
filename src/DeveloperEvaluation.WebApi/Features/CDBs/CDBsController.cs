@@ -47,15 +47,6 @@ public class CDBsController : BaseController
         if (!validationResult.IsValid)
             return BadRequest(validationResult.Errors);
 
-        await _messageBrokerPublisher.PublishMessageAsync(request, RabbitMQQueues.CreateCDBQueue);
-
-        return Created(string.Empty, new ApiResponseWithData<CreateCDBResponse>
-        {
-            Success = true,
-            Message = "Create CDB sent to queue successfully."
-        });
-
-        /*
         var command = _mapper.Map<CreateCDBCommand>(request);
         var response = await _mediator.Send(command, cancellationToken);
         return Created(string.Empty, new ApiResponseWithData<CreateCDBResponse>
@@ -64,7 +55,6 @@ public class CDBsController : BaseController
             Message = "CDB created successfully",
             Data = _mapper.Map<CreateCDBResponse>(response)
         });
-        */
     }
 
     [HttpGet("{id}")]

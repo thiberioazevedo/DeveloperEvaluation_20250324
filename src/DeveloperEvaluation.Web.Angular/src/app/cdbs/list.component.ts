@@ -6,6 +6,7 @@ import { CdbService } from '@app/_services/cdb.service';
 import { PaginationComponent } from '@app/_components/pagination/pagination.component';
 import { ApiResponseWithData } from '@app/_models/api-response-with-data';
 import { Cdb } from '@app/_models/cdb';
+import { MonthCdb } from '@app/_models/monthCdb';
 
 @Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
@@ -53,5 +54,13 @@ export class ListComponent implements OnInit {
 
     onPageChange(event: any){
         this.dataBind();
+    }
+
+    public getLastMonthCDB(cdb: Cdb): MonthCdb | undefined {
+        return cdb.monthCDBCollection?.find(i => i.month === cdb.months)
+    }
+
+    getTotalTaxAmount(cdb: Cdb): number {
+        return cdb?.monthCDBCollection?.reduce((acc, item) => acc + (item.taxAmount || 0), 0) || 0;
     }
 }

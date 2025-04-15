@@ -17,9 +17,5 @@ public class CDBConfiguration : IEntityTypeConfiguration<CDB>
         builder.Property(u => u.Months).IsRequired();
         builder.Property(u => u.CDI).IsRequired();
         builder.Property(u => u.TB).IsRequired();
-        builder.Property(u => u.GrossValue).IsRequired();
-        builder.Property(u => u.TaxPercentage).IsRequired();
-        builder.Property(u => u.TaxAmount).IsRequired();
-        builder.Property(u => u.NetValue).IsRequired();
     }
 }

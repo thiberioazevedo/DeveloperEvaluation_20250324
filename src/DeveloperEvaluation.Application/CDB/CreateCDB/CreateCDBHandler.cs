@@ -29,7 +29,7 @@ public class CreateCDBHandler : IRequestHandler<CreateCDBCommand, CreateCDBResul
 
         var cDB = _mapper.Map<CDB>(command);
 
-        cDB.Calculate(GetCDICurrent(), GetTBCurrent());
+        cDB.GenerateMonths(GetCDICurrent(), GetTBCurrent());
 
         var validationResultModel = cDB.Validate();
 

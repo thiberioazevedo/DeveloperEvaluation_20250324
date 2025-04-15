@@ -27,7 +27,7 @@ public class CreateCDBHandlerTests : BaseTest<CDB>
 
     public override CDB CreateEntityDefaultInstance()
     {
-        return new CDB(1, 2, 1, 1);
+        return new CDB(1, 2);
     }
 
     public override IRepository<CDB> CreateRepositoryInstance()
@@ -54,7 +54,7 @@ public class CreateCDBHandlerTests : BaseTest<CDB>
 
     static CDB CommandToEntity(CreateCDBCommand createCDBCommand)
     {
-        return new CDB(createCDBCommand.Value, createCDBCommand.Months, 1, 1);
+        return new CDB(createCDBCommand.Value, createCDBCommand.Months);
     }
 
     static CreateCDBResult EntityToResult(CDB cDB)
